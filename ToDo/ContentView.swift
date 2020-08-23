@@ -7,12 +7,33 @@
 //
 
 import SwiftUI
-
+var rowHeight: CGFloat = 50
 struct ContentView: View {
+    var sampleTasks = ["Task One","Task Two","Task Three"]
     var body: some View {
-        Text("Hello, World!")
+   
+            List{
+                ForEach(sampleTasks, id: \.self) { item in
+                HStack {
+                Text(item)
+                Spacer()
+                    Button(action: {print("Task Done")}){
+                Image(systemName: "circle")
+                        .imageScale(.large)
+                        .foregroundColor(.gray)
+                        
+                    }
+                }
+                    //dynamics
+                    
+                    
+                }
+                .frame(height: rowHeight)
+                //statics
+            }
+        }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

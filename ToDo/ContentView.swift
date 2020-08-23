@@ -9,6 +9,7 @@
 import SwiftUI
 var rowHeight: CGFloat = 50
 struct ContentView: View {
+    @State var newTaskTitle = ""
     var sampleTasks = ["Task One","Task Two","Task Three"]
     var body: some View {
    
@@ -30,6 +31,16 @@ struct ContentView: View {
                 }
                 .frame(height: rowHeight)
                 //statics
+                HStack {
+                    TextField("Add task .. ", text: $newTaskTitle, onCommit: {print("New task added")})
+                    
+                    Button(action: {print("New Task entered")}) {
+                        
+                        Image(systemName: "plus")
+                            .imageScale(.large)
+                    }
+                }
+                .frame(height: rowHeight)
             }
         }
     }

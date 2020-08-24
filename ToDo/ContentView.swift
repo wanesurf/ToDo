@@ -57,7 +57,9 @@ struct ContentView: View {
                 .frame(height: rowHeight)
                 
                 HStack{
+                    NavigationLink(destination: TaskDone()){
                            Text("Completed Tasks")
+                    }
                        }
             }
         .navigationBarTitle(Text("To-Do"))
